@@ -65,6 +65,57 @@ def file_output(returned_errors):
 #And finally, close the file.
     file.close()
 
+#Function call
+
+#Define the main function and call both functions that we defined in the earlier sections.
+
+# The variable log_file takes in the path to the log file passed as a parameter. 
+# In our case, the file is fishy.log. Call the first function i.e., error_search()
+# and pass the variable log_file to the function. This function will search and return a list of errors
+# that would be stored in the variable returned_errors.\
+# Call the second function file_output and pass the variable returned_errors as a parameter.
+if __name__ == "__main__":
+  log_file = sys.argv[1]
+  returned_errors = error_search(log_file)
+  file_output(returned_errors)
+  sys.exit(0)
+
+#Save the file by clicking Ctrl-o, followed by the Enter key and Ctrl-x.
+
+#Make the file executable before running it.
+sudo chmod +x find_error.py
+#Now, run the file by passing the path to fishy.log as a parameter to the script.
+./find_error.py ~/data/fishy.log
+
+#This script will now prompt for the type of error to be searched. Continue by entering the following type of error:
+CRON ERROR Failed to start
+
+#On successful execution, this will generate an errors_found.log file, 
+#where you will find all the ERROR logs based on your search.
+#You can view the ERROR log using the command below:
+cat ~/data/errors_found.log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
